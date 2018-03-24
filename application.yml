@@ -1,0 +1,40 @@
+# COMMON APPLICATION PROPERTIES
+
+# start services on random port by default
+server.port: 0
+
+# database init, supports mysql too
+spring:
+  sleuth:
+    sampler:
+      percentage: 1.0
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+      indent-output: true
+  metrics:
+    servo:
+      enabled: false
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+    statusPageUrlPath: /info
+    healthCheckUrlPath: /health
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka/
+
+management:
+  context-path: /
+  security.enabled: false
+
+#monitoring:
+#  path: /prometheus
+#  interval: 10000
+  
+# Logging
+logging.level.org.springframework: INFO
+
+

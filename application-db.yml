@@ -1,0 +1,7 @@
+bc:
+  database: mysql
+
+spring:
+  datasource:
+    schema: classpath:db/${bc.database}/schema.sql
+    data: classpath:db/${bc.database}/data.sql    
