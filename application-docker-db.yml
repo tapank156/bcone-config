@@ -21,4 +21,4 @@ spring:
       write-dates-as-timestamps: true    
 
 monitor:
-  enabled: false 
+  enabled: true 
